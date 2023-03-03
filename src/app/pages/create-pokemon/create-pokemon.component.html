@@ -1,0 +1,37 @@
+<ul>
+  <li>
+    <a [routerLink]="['/']">HOME</a>
+  </li>
+  <li>
+    <a [routerLink]="['/create']">CREATION</a>
+  </li>
+</ul>
+<p>create-pokemon works!</p>
+<form [formGroup]="formGroup" #myForm="ngForm" (ngSubmit)="formGroup.valid && onSubmit()">
+  <div>
+    <span>Nom : </span>
+    <input type="texte" placeholder="Nom" formControlName="nom"/>
+    <div *ngIf="formGroup.get('nom')?.errors && inValidate === true">
+      <div class="text-danger" *ngIf="formGroup.get('nom')?.errors">le nom est requis</div>
+    </div>
+  </div>
+  <div>
+    <span>Url : </span>
+    <input type="texte" placeholder="url" formControlName="url"/>
+    <div *ngIf="formGroup.get('url')?.errors && inValidate === true">
+      <div class="text-danger" *ngIf="formGroup.get('url')?.errors">l'url est requis'</div>
+    </div>
+  </div>
+  <div>
+    <span>Description : </span>
+    <input type="texte" placeholder="description" formControlName="description"/>
+    <div *ngIf="formGroup.get('description')?.errors && inValidate === true">
+      <div class="text-danger" *ngIf="formGroup.get('description')?.errors">la description est requise</div>
+    </div>
+  </div>
+  <div>
+    <button type="submit" (click)="handleValidate()">
+      Création
+    </button>
+  </div>
+</form>

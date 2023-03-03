@@ -1,0 +1,8 @@
+<p *ngIf="pokemonDetail != ''">Détail du pokemon</p>
+
+<div *ngFor="let p of pokemonDetail">
+  Nom : {{p.nom}},
+  url : {{p.url}},
+  description : {{p.description}}
+</div>
+

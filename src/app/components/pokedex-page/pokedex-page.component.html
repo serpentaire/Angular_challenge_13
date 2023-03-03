@@ -1,0 +1,13 @@
+<ul>
+  <li>
+    <a [routerLink]="['/']">HOME</a>
+  </li>
+  <li>
+    <a [routerLink]="['/create']">CREATION</a>
+  </li>
+</ul>
+<app-pokemon-list
+  (selectedPokemon) = "onGetPokemon($event)"
+ [pokemon] = "pokemon"
+ ></app-pokemon-list>
+<app-pokemon-detail [pokemonDetail] = "pokemonDetail"></app-pokemon-detail>

@@ -1,0 +1,6 @@
+<p>Liste des pokemons</p>
+<ul>
+  <li *ngFor="let p of pokemon" (click)="selectPokemon(p.nom)">
+    Nom : {{p.nom}}
+  </li>
+</ul>
